@@ -1,0 +1,68 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+
+@mixin common {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 3.5rem;
+    cursor: pointer;
+
+    @include respond(tab-port){
+        font-size: 2rem; 
+        font-weight: 500;      
+    }
+}
+
+.lane{
+    position: absolute;
+    height: 100%;
+    border-radius: 4rem;
+    width: 7rem;
+    transform: translate(-20%, 0);
+    background-color: $sky-blue;
+
+    @include respond(tab-port){
+        height: 4rem;
+        width: 100%;       
+        transform: none;
+        bottom: 0;
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &_item{
+        width: 100%;
+        @include common();
+        color: lighten($blue, 25%);
+
+        @include respond(tab-port){
+            width: unset;
+            height: 100%;   
+        }
+    }
+
+    &_top{
+        @include common();
+        position: absolute;
+        width: 120%;
+        left: 50%;
+        transition: top .25s ease-in;
+        transform: translate(-50%, 0);
+        border-radius: 5rem;
+        color: $white;
+        background-color: lighten($blue, 10%);
+
+        @include respond(tab-port){
+            top: 50%;
+            border-radius: 2rem;
+            left: unset;
+            width: unset;
+            height: 120%;
+            transform: translate(0, -50%);
+        }
+    }
+}

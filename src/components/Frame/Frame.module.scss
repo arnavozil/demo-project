@@ -1,0 +1,15 @@
+@import "../../sass/mixins";
+
+.main{
+    width: 100%;
+    height: clamp(70vh, 70vh, 70vh);
+    margin: 2rem 0;
+    position: relative;
+
+    @include respond(tab-port){
+        width: calc(100% + 4rem);
+        margin: 2rem -2rem;
+        display: flex;
+        flex-direction: column;           
+    }
+}

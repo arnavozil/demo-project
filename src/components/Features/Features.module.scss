@@ -1,0 +1,83 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+@include responsive();
+.main{
+    width: 100%;
+    position: relative;
+    padding: 0 20%;
+    padding-top: 58vh;
+    margin-bottom: 82.5vh;
+
+    @include respond(tab-port){
+        padding-top: 0;      
+        padding: 0; 
+        margin-top: 25rem;
+        margin-bottom: 0;
+    }
+
+    &_header{
+        width: 70%;
+        margin: auto;
+        display: flex;
+        padding-right: 20%;
+        flex-direction: column;
+        color: $white;
+        transform: translateY(-50%);
+
+        @include respond(tab-port){
+            transform: none;
+            width: 100%;
+            padding-right: 0;   
+        }
+
+        &_main{
+            font-size: 4rem;
+            font-weight: 700;
+
+            @include respond(tab-port){
+                font-size: 2.5rem;
+                font-weight: 800;
+                line-height: 3.25rem;
+            }
+        }
+
+        &_sub{
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: darken($white, 50%);
+        
+        
+            @include respond(tab-port){
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &_vertical{
+        @include absEl(0, 0);
+        right: unset;
+        left: 16.69%;
+    }
+
+    &_rightVertical{
+        @include absEl(58vh, 5%);
+        z-index: -1;
+    }
+
+    &_downVertical{
+        @include absEl(105%, 5%);
+    }
+
+    &_slideContainer{
+        margin: 3rem auto;
+        width: 90%;
+        margin-left: 15%;
+        height: fit-content;
+
+        @include respond(tab-port){
+            width: 100%;
+            margin-left: 0;   
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import "../../sass/animations";
+@import "../../sass/mixins";
+
+.main{
+    height: 100%;
+    margin: auto;
+    display: flex;
+    animation: fromRight 1s ease forwards;
+
+    @include respond(tab-port){
+        height: 30vh;
+        width: calc(100% - 10vw);           
+    }
+}

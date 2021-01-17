@@ -1,0 +1,109 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+@include responsive();
+.main{
+    width: 100%;
+    padding: 10rem 0;
+    margin-bottom: 8vh;
+
+    @include respond(tab-port){
+        padding: 0;   
+        margin-bottom: 0;
+    }
+
+    &_video{
+        height: fit-content;
+        position: relative;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+
+        @include respond(tab-port){
+            flex-direction: column;       
+        }
+
+        &_textBox{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            z-index: 1;
+            color: $white;
+            max-width: 30%;
+            background-color: darken($white, 80%);
+            right: 25%;
+            border-radius: 3rem;
+            padding: 3rem;
+            transform: translate(10%, -40%);
+
+            @include respond(tab-port){
+                width: 100%;
+                max-width: 100%;
+                transform: none;
+                position: static;
+                background: none;
+                padding: 0;
+                margin-bottom: 5rem;
+            }
+
+            &_main{
+                font-size: 7rem;
+                font-weight: 900;
+
+                @include respond(tab-port){
+                    font-size: 4rem;
+                }
+            }
+
+            &_sub{
+                color: darken($white, 30%);
+                font-size: 2.75rem;
+                letter-spacing: .01rem;
+
+                @include respond(tab-port){
+                    font-size: 2rem
+                }
+            }
+        }
+
+        &_lines{
+            @include absEl(0, 5%);
+        }
+
+        &_topLine{
+            @include absEl(-25%, -2rem);
+        }
+
+        &_bigB{
+            @include absEl(-10%, 0);
+            right: unset;
+            left: 26%;
+        }
+
+        &_leftLine{
+            @include absEl(40%, 0);
+            right: unset;
+            left: 0;
+        }
+
+        &_verticalLine{
+            @include absEl(10%, 0);
+            right: unset;
+            left: 14%;
+        }
+
+        &_vid{
+            width: 50%;
+            border-radius: 5rem;
+
+            @include respond(tab-port){
+                width: 100%;
+                border-radius: 1.75rem;
+                display: flex;
+            }
+        }
+    }
+}
+

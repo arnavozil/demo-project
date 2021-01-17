@@ -1,0 +1,41 @@
+@import "./variables";
+@import "./mixins";
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: $sky-blue $primary-back;
+
+    &::-webkit-scrollbar {
+        width: .75rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $sky-blue;
+        border-radius: 1.5rem;       
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $primary-back;
+        border: .1px solid lighten($primary-back, 20%);
+    }
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    background-color: $primary-back;
+    
+    @include respond(tab-port){
+        padding: 0 2rem;   
+    }
+}
